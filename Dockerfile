@@ -1,6 +1,6 @@
 ### contains Gudhi 2.3.0 dockerfile http://gudhi.gforge.inria.fr/dockerfile/
 # Image de base
-FROM ubuntu:18.04
+FROM kalilinux/kali_rolling
 
 # Update and upgrade distribution
 RUN apt-get update && \
@@ -13,7 +13,7 @@ RUN apt-get install -y \
     tzdata
 
 # Timezone
-RUN echo "Europe/Paris" | tee /etc/timezone && \
+RUN echo "Asia/Singapore" | tee /etc/timezone && \
     ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
